@@ -3,15 +3,23 @@ import java.util.*;
 public class GumballMachine
 {
 
-    private int num_gumballs;
+    private int num_gumballs,cost;
     private boolean has_quarter;
+    private Scanner quarter;
+    private Scanner validCoin;
+    public String s1, s2, s3, s4;
     
 
     public GumballMachine( int size )
     {
         // initialise instance variables
         this.num_gumballs = size;
+        this.cost = 50;
         this.has_quarter = false;
+        this.s1 = "Please enter 25 to insert Quarter:";
+        this.s2 = "Please enter 25 to insert the first Quarter:";
+        this.s3 = "Please enter 25 to insert the second Quarter:";
+        this.s4 = "Please enter a valid number for US coins (1 for Penny, 5 for Nickle, 10 for Dime and 25 for Quarter):";
     }
 
     public void insertQuarter(int coin)
@@ -30,18 +38,92 @@ public class GumballMachine
             {
                 this.num_gumballs-- ;
                 this.has_quarter = false ;
-                System.out.println( "Thanks for your quarter.  Gumball Ejected!" ) ;
+                System.out.println( "Thanks for your Quarter.  Gumball Ejected!" ) ;
             }
             else
             {
-                System.out.println( "No More Gumballs!  Sorry, can't return your quarter." ) ;
+                System.out.println( "No More Gumballs!  Sorry, can't return your Quarter." ) ;
             }
         }
         else 
         {
-            System.out.println( "Please insert a quarter" ) ;
+            System.out.println( "Please insert a Quarter." ) ;
         }        
     }
+    
+    public void turnModel3Crank()
+    {
+        if ( this.num_gumballs > 0 )
+        {
+            this.num_gumballs-- ;
+            System.out.println( "Thanks for your coins.  Gumball Ejected!" ) ;
+        }
+        else
+        {
+            System.out.println( "No More Gumballs!  Sorry, can't return your coins." ) ;
+        }
+    }
+
+    
+    public void modelOne(String s)
+    {
+        System.out.println(s);
+        this.quarter = new Scanner(System.in);
+        while (!this.quarter.hasNextInt()){
+           System.out.println(s);
+           this.quarter = new Scanner(System.in);
+        }
+        int q = this.quarter.nextInt();   
+        insertQuarter(q);
+        while(!this.has_quarter)
+        {
+            System.out.println(s);
+            this.quarter = new Scanner(System.in);
+            if (this.quarter.hasNextInt())
+            {
+                q = this.quarter.nextInt();
+                insertQuarter(q);   
+            }
+        }
+    }
+    
+    public void modelTwo()
+    {
+        modelOne(this.s2);
+        modelOne(this.s3);
+    }
+    
+    
+    public void modelThree()
+    {
+        Map< Integer, String> coins = createCoinDict();
+        while(this.cost > 0)
+        {
+            System.out.println(this.s4);
+            this.validCoin = new Scanner(System.in);
+            while (!this.validCoin.hasNextInt()){
+               System.out.println(this.s4);
+               this.validCoin = new Scanner(System.in);
+            }
+            int coin = this.validCoin.nextInt();
+            // check if user input exist in map
+            while(!coins.containsKey(coin))
+            {
+                System.out.println(this.s4);
+                this.validCoin = new Scanner(System.in);
+                if(this.validCoin.hasNextInt())
+                {
+                    coin = this.validCoin.nextInt();
+                }
+            }
+            this.cost -= coin;
+            if (this.cost > 0)
+            {
+                System.out.println("You still have to insert " + this.cost + " cents.");
+            }
+        }
+    }
+    
     
     public void caseDescription()
     {
@@ -56,25 +138,24 @@ public class GumballMachine
             // If user chose to play Model1
             if (choice == 1)
                 {
-                    System.out.println( "You have entered "+ choice);
-                    System.out.println( "Please enter 25 to insert quarter:");
-                    Scanner quarter = new Scanner(System.in);
-                    if (quarter.hasNextInt()){
-                        int q = quarter.nextInt();
-                        insertQuarter(q);
-                        turnCrank();
-                    }
+                    // call helper method modelOne
+                    modelOne(this.s1);
+                    turnCrank();
                     System.out.println( "Please enter your choice: ");
                 }
            else if (choice == 2)
                 {
-                    System.out.println( "You have entered "+ choice);
+                    modelTwo();
+                    turnCrank();
                     System.out.println( "Please enter your choice: ");
                 }
            else if (choice == 3)
                 {
-                    System.out.println( "You have entered "+ choice);
+                    //call helper method modelThree
+                    modelThree();
+                    turnModel3Crank();
                     System.out.println( "Please enter your choice: ");
+                    this.cost = 50;
                 }
            else {
                     break;
@@ -83,13 +164,13 @@ public class GumballMachine
         System.out.println( " You have exited the program.");
     } 
     
-    public Dictionary createCoinDict()
+    public Map createCoinDict()
     {
-        Dictionary coins = new Hashtable();
-	coins.put(1,"Penny");
-	coins.put(5,"Nickel");
-	coins.put(10, "Dime");
-	coins.put(25, "Quarter");
-	return coins;
+        Map < Integer, String> coins = new Hashtable();
+        coins.put(1,"Penny");
+        coins.put(5,"Nickel");
+        coins.put(10, "Dime");
+        coins.put(25, "Quarter");
+        return coins;
     }
 }
