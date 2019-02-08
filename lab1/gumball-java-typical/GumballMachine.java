@@ -53,9 +53,17 @@ public class GumballMachine
         while (input.hasNextInt())
         {
             int choice = input.nextInt();
+            // If user chose to play Model1
             if (choice == 1)
                 {
                     System.out.println( "You have entered "+ choice);
+                    System.out.println( "Please enter 25 to insert quarter:");
+                    Scanner quarter = new Scanner(System.in);
+                    if (quarter.hasNextInt()){
+                        int q = quarter.nextInt();
+                        insertQuarter(q);
+                        turnCrank();
+                    }
                     System.out.println( "Please enter your choice: ");
                 }
            else if (choice == 2)
@@ -85,4 +93,3 @@ public class GumballMachine
 	return coins;
     }
 }
-
