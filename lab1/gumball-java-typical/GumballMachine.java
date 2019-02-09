@@ -107,7 +107,7 @@ public class GumballMachine
             }
             int coin = this.validCoin.nextInt();
             // check if user input exist in map
-            while(!coins.containsKey(coin))
+            while(!coins.containsKey(coin)|| this.cost - coin < 0)
             {
                 System.out.println(this.s4);
                 this.validCoin = new Scanner(System.in);
@@ -121,6 +121,7 @@ public class GumballMachine
             {
                 System.out.println("You still have to insert " + this.cost + " cents.");
             }
+
         }
     }
     
