@@ -1,7 +1,6 @@
 1. CRC Cards
 
-
-    Class: 
+    Class name: 
 
           Customer
 
@@ -11,34 +10,76 @@
                 name, cellphone number, party size
 
           do: 
-                provide name, cellphone number, party size, request tabel, cancel request
+                provide name, provide cellphone number, provide party size, request tabel, cancel request
 
     Collaborator:
 
           WaitlistManager
   
 
-Class: WaitlistManager
-Responsibility:
-  know:
-  do:
-Collaborator:
+    Class name: 
 
-Class: WaitlistManager
-Responsibility:
-  know:
-  do:
-Collaborator:
+          WaitlistManager
 
-Class: WaitlistManager
-Responsibility:
-  know:
-  do:
-Collaborator:
+    Responsibility:
 
-Class: WaitlistManager
-Responsibility:
-  know:
-  do:
-Collaborator:
+          know: 
+                
 
+          do: 
+                
+
+    Collaborator:
+
+          
+          
+
+    Class name: 
+
+          Waitlist
+
+    Responsibility:
+
+          know: 
+                
+
+          do: 
+                
+
+    Collaborator:
+
+          
+
+    Class name: 
+
+          Table
+
+    Responsibility:
+
+          know: 
+                
+
+          do: 
+                
+
+    Collaborator:
+
+          
+   
+    Class name: 
+
+          TableManager
+
+    Responsibility:
+
+          know: 
+                
+
+          do: 
+                
+
+    Collaborator:
+
+          
+
+               
