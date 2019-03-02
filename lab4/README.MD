@@ -1,8 +1,6 @@
 1. CRC Cards
 
-    Class name: 
-
-          Customer
+    Class name: Customer
 
     Responsibility:
 
@@ -12,14 +10,22 @@
           do: 
                 provide name, provide cellphone number, provide party size, request tabel, cancel request
 
-    Collaborator:
-
-          WaitlistManager
+    Collaborator: WaitlistManager
   
 
-    Class name: 
+    Class name: WaitlistManager
 
-          WaitlistManager
+    Responsibility:
+
+          know: 
+                
+
+          do: 
+                
+
+    Collaborator:      
+
+    Class name: Waitlist
 
     Responsibility:
 
@@ -32,27 +38,8 @@
     Collaborator:
 
           
-          
 
-    Class name: 
-
-          Waitlist
-
-    Responsibility:
-
-          know: 
-                
-
-          do: 
-                
-
-    Collaborator:
-
-          
-
-    Class name: 
-
-          Table
+    Class name: Table
 
     Responsibility:
 
@@ -66,9 +53,7 @@
 
           
    
-    Class name: 
-
-          TableManager
+    Class name: TableManager
 
     Responsibility:
 
