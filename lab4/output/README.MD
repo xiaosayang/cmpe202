@@ -74,5 +74,6 @@
 
           
 
-               
+
+2. I chose the Obeserver Design Pattern, because the Table Manager class acts as the concreteSubject which gets Table status, and sends its status to concreteObeserver, which is the Waitlist Manager class. Once the Waitlist Manager gets the status, it notifies the next Customer in the waitlist for the Customer to decide to stay or leave. 
 
