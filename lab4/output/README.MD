@@ -13,6 +13,8 @@
     Collaborator: WaitlistManager
   
 
+
+
     Class name: WaitlistManager
 
     Responsibility:
@@ -23,8 +25,11 @@
           do: 
                register customer waitlist, notify customer table status, remove customer from waitlist
 
-    Collaborator:  Waitlist, TableManager     
-
+    Collaborator:  Waitlist, TableManager
+    
+    
+    
+    
     Class name: Waitlist
 
     Responsibility:
@@ -37,7 +42,8 @@
 
     Collaborator: WaitlistManager
 
-          
+  
+  
 
     Class name: Table
 
@@ -51,7 +57,8 @@
 
     Collaborator: TableManager
 
-          
+ 
+ 
    
     Class name: TableManager
 
