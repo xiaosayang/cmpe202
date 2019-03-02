@@ -1,8 +1,8 @@
 1. CRC Cards
 
-    Class name: Customer
+    Class Name: Customer
 
-    Responsibility:
+    Responsibilities:
 
           know: 
                 name, cellphone number, party size
@@ -10,14 +10,14 @@
           do: 
                 provide name, provide cellphone number, provide party size, request table, cancel request
 
-    Collaborator: WaitlistManager
+    Collaborators: WaitlistManager
   
 
 
 
-    Class name: WaitlistManager
+    Class Name: WaitlistManager
 
-    Responsibility:
+    Responsibilities:
 
           know: 
                customer party size, number of customer in waitlist, waitlist size 
@@ -25,7 +25,7 @@
           do: 
                register customer waitlist, notify customer table status, remove customer from waitlist
 
-    Collaborator:  Waitlist, TableManager
+    Collaborators:  Waitlist, TableManager
     
     
     
@@ -45,9 +45,9 @@
   
   
 
-    Class name: Table
+    Class Name: Table
 
-    Responsibility:
+    Responsibilities:
 
           know: 
                total number of table, table size, table status 
@@ -55,14 +55,14 @@
           do: 
                update table status 
 
-    Collaborator: TableManager
+    Collaborators: TableManager
 
  
  
    
-    Class name: TableManager
+    Class Name: TableManager
 
-    Responsibility:
+    Responsibilities:
 
           know: 
                 table status, table size
@@ -70,7 +70,7 @@
           do: 
                 get table status, get table size, notify WaitlistManager table status
 
-    Collaborator: Table, WaitlistManager
+    Collaborators: Table, WaitlistManager
 
           
 
