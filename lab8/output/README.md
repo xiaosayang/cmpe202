@@ -1,1 +1,1 @@
-output folder with outout screenshot
+output folder with output screenshot
