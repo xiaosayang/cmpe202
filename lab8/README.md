@@ -1,0 +1,1 @@
+For the credit card text entry, the original component design pattern works well.  For the display functionality, I chose to implement the decorator pattern because each object has extra responsibilities. A decorator pattern structure works best for adding extra responsibilities to the objects without affecting other objects.
