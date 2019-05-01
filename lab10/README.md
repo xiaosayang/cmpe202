@@ -1,5 +1,7 @@
 Compare LAB #1 - Code Maintainability with the Feature IDE / AspectJ solution
 
+Comparing lab1 Gumball machine solution with lab10 Feature IDE/AspectJ solution, I found that the AspectJ solution is easier to maintain due to its implementation of AOP. The classes in lab1 are know aspects in lab10, and with aspects new features of gumball machines can be managed by the model and configuration files more easily. There is no need to create child classes for the different types of gumball machines as their behaviors are now represented as features in AspectJ solution.
+
 
 GumballMachineV1
 
